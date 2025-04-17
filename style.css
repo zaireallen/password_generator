@@ -8,11 +8,12 @@ p {
 }
 
 .inner-container {
-  border: 1px dashed #C9D5E2;
+  border: 1px dashed #CBD5E1;
+  
   width: 100%;
   height: 100%;
   border-radius: 24px;
-  
+  padding: 12px
 }
 
 .header { 
@@ -25,7 +26,7 @@ p {
   align-items: center;
   justify-content: center;
   width: 400px;
-  padding: 24px 24px;
+  padding: 12px;
   border-radius: 24px;
   border: 1px solid #e2e8f0;
   position: absolute;
@@ -113,18 +114,6 @@ input:focus {
 
 .password-container {
   margin-top: 12px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 24px 12px;
-  width: 100%;
-  border-radius: 24px;
-  border: 1px dashed #cbd5e1;
 }
 
 .frame-2 {
