@@ -8,20 +8,15 @@ p {
 }
 
 .inner-container {
-  margin: 0 auto;
+  border: 1px dashed #C9D5E2;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  
 }
 
 .header { 
   margin-bottom: 24px;
-}
-
-.frame-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 1440px;
-  height: 100vh;
 }
 
 .frame {
@@ -30,7 +25,7 @@ p {
   align-items: center;
   justify-content: center;
   width: 400px;
-  padding: 24px 0;
+  padding: 24px 24px;
   border-radius: 24px;
   border: 1px solid #e2e8f0;
   position: absolute;
@@ -80,12 +75,13 @@ label:before {
 .password-field {
   width: 100%;
   padding: 16px;
-  font-size: 24px;
-  border: 1px solid #ddd;
+  font-size: 16px;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
-  background-color: #f8f8f8;
+  background-color: #F8FAFC;
   box-sizing: border-box;
   padding-right: 60px; /* Make room for the icon */
+  color: #657489;
 }
 
 .copy-icon {
@@ -94,23 +90,29 @@ label:before {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #777;
-  width: 28px;
-  height: 28px;
+  color: #657489;
+  width: 16px;
+  height: 16px;
+  
 }
 
 .copy-icon:hover {
   color: #333;
 }
 
-
 input {
   padding: 10px 30px;
   border: none;
+  height: 40px;
+  font-family: 'Roboto Mono';
 }
 
 input:focus {
   outline: none;
+}
+
+.password-container {
+  margin-top: 12px;
 }
 
 .content {
