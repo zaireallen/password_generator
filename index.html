@@ -17,22 +17,21 @@
         </header>
 
         <div class="interactive-area">
-          <button class="generate-button" type="button">
+          <button class="generate-button" type="button" onclick="genPword()">
             <span class="button-text">Generate new password</span>
           </button>            
           
           <div class="password-container">
-            <input type="text" class="password-field" value=">nfJjy!dDvR&ial" readonly>
+            <input type="text" class="password-field" value=">nfJjy!dDvR&ial" id="generatedPWord" readonly>
 
             <svg class="copy-icon" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M7.25 1.5H9.75C10.0261 1.5 10.25 1.72386 10.25 2C10.25 2.27614 10.0261 2.5 9.75 2.5H7.25C6.97386 2.5 6.75 2.27614 6.75 2C6.75 1.72386 6.97386 1.5 7.25 1.5ZM5.31301 1.5C5.53503 0.637386 6.31808 0 7.25 0H9.75C10.6819 0 11.465 0.637386 11.687 1.5H13.75H14.5V2.25V12.75C14.5 14.5449 13.0449 16 11.25 16H5.75C3.95507 16 2.5 14.5449 2.5 12.75V2.25V1.5H3.25H5.31301ZM5.51756 3H5.5H4V12.75C4 13.7165 4.7835 14.5 5.75 14.5H11.25C12.2165 14.5 13 13.7165 13 12.75V3H11.5H11.4824C11.1366 3.5978 10.4903 4 9.75 4H7.25C6.50972 4 5.86337 3.5978 5.51756 3Z" fill="#657489" style="fill:#657489;fill:color(display-p3 0.3965 0.4545 0.5358);fill-opacity:1;"/>
             </svg>
           </div>
-
-          <p class="password-length" id="generatedPWord">12 characters</p>
         </div>
 
       </div>
     </main>
   </body>
+  <script src="./index.js"></script>
 </html>
