@@ -4,8 +4,9 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let gen_pword_button = document.getElementsByClassName("generate-button")
 let pword_output = document.getElementById("generatedPWord")
 
+let copy_btn = document.getElementById("copy-button")
 
-
+// password generator
 function genPword () {
     let pword = []
     
@@ -17,4 +18,10 @@ function genPword () {
         
         pword_output.value = pword.join("")
     }
+}
+
+// copy button
+
+copy_btn.onclick = function () {
+    pword_output.select()
 }

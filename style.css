@@ -25,14 +25,40 @@ p {
   text-align: center;
 }
 
+button {
+  display:inline;
+  align-items: center;
+  padding: 8px 16px;
+  height: 40px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: auto;
+}
+
 button:focus-visible {
   outline: 2px solid #4a90e2;
   outline-offset: 2px;
 }
 
 a {
+  color: #657489;
+  font-size: 16px;
+  font-weight: 400;
   text-decoration: none;
-  color: inherit;
+}
+
+a:hover {
+  color: #1D67D2;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .inner-container {
@@ -46,6 +72,16 @@ a {
 
 .header { 
   margin-bottom: 24px;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  padding: 24px;
 }
 
 .frame {
