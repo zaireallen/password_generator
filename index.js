@@ -4,8 +4,17 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let gen_pword_button = document.getElementsByClassName("generate-button")
 let pword_output = document.getElementById("generatedPWord")
 
+let pword = []
+
 function genPword () {
-    let randomChars = Math.random()*16 ) + 1
-    console.log(randomChars)
-    // pword_output.value= Math
+
+    for (let i = 0; i < 15; i++) {
+        let r = Math.floor(Math.random() * characters.length)
+        pword += characters[r]
+
+     
+        pword_output.value = pword
+    }
+
+
 }

@@ -1,3 +1,21 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif&display=swap");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+
 h1 { 
   font-family: 'Instrument Serif';
 }
@@ -5,6 +23,16 @@ h1 {
 p {
   color: #697281;
   text-align: center;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .inner-container {
@@ -198,5 +226,12 @@ input:focus {
 
   .button-text {
     font-size: 16px;
+  }
+}
+
+/* Basic responsive design */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
   }
 }
