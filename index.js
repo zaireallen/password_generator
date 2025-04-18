@@ -18,7 +18,6 @@ function genPword () {
         
         pword_output.value = pword.join("")
     }
-    
 
     // displays the copy button once a valid password has been created
     if (pword.length > 5) {
