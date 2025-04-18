@@ -150,6 +150,7 @@ main {
   align-items: center;
   justify-content: center;
   height: auto;
+  visibility: hidden;
 }
 
 .copy-icon {

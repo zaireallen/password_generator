@@ -18,6 +18,12 @@ function genPword () {
         
         pword_output.value = pword.join("")
     }
+    
+
+    // displays the copy button once a valid password has been created
+    if (pword.length > 5) {
+        copy_btn = document.getElementById("copy-button").style.visibility = "visible";
+    }
 }
 
 // copy button
@@ -29,3 +35,4 @@ copy_btn.onclick = function () {
         alert("Text copied")
     })
 }
+
