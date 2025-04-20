@@ -24,17 +24,14 @@ function genPword () {
 
     // displays divs once a valid password has been created
     if (pword.length >= 8) {
-        pwordSec.style.visibility = "visible"
-
-        copy_btn = document.getElementById("copy-button").style.visibility = "visible";
-
-        dropdownSec.style.visibility = "visible"
+        pwordSec.style.display = "block"
+        dropdownSec.style.display = "flex"
     }
 }
 
 // copy button
 
-let copy_btn = document.getElementById("copy-button")
+let copy_btn = document.querySelector('.password-container')
 
 copy_btn.onclick = function () {
     let val = document.getElementById('generatedPWord').value;
@@ -50,10 +47,6 @@ let menuDropdown = document.getElementById('menu-dropdown');
 
 // function to update slider background
 function updateSliderBackground(slider) {
-    // get the dimensions
-    const thumbWidth = 18; // width of the thumb
-    const totalWidth = slider.offsetWidth;
-    
     // calculate the percentage through the range
     const min = parseInt(slider.min);
     const max = parseInt(slider.max);
@@ -61,17 +54,19 @@ function updateSliderBackground(slider) {
     
     // calculate the percentage position
     const range = max - min;
-    const percentageThrough = ((value - min) / range);
+    const percentage = ((value - min) / range) * 100;
     
-    // calculate the actual pixel position of the thumb
-    const availableWidth = totalWidth - thumbWidth;
-    const pixelThrough = percentageThrough * availableWidth + (thumbWidth / 2);
+    // adjust percentage to account for thumb width (30px) relative to track
+    const thumbOffset = (30 / slider.offsetWidth) * 100 / 2;
+    const adjustedPercentage = Math.min(100 - thumbOffset, Math.max(thumbOffset, percentage));
     
-    // convert back to percentage for gradient
-    const gradientPercentage = (pixelThrough / totalWidth) * 100;
-    
-    // apply the gradient
-    slider.style.background = `linear-gradient(to right, #080808 ${gradientPercentage}%, #F1F5F9 ${gradientPercentage}%)`;
+    // apply the gradient with adjusted positioning
+    slider.style.background = `linear-gradient(to right, 
+        #080808 0%, 
+        #080808 ${adjustedPercentage}%, 
+        #F1F5F9 ${adjustedPercentage}%, 
+        #F1F5F9 100%
+    )`.replace(/\s+/g, ' ').trim();
 }
 
 

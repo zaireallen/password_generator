@@ -67,7 +67,7 @@ main {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  padding: 24px 12px;
+  padding: 12px 12px;
   display: flex;
   flex-direction: column;
   transition: height 0.2s ease;
@@ -121,6 +121,8 @@ main {
   position: relative;
   margin: 0 auto;
   max-width: 600px;
+  margin-top: 12px;
+  display: none;
 }
 
 .input-with-button {
@@ -139,6 +141,30 @@ main {
   box-sizing: border-box;
   padding-right: 60px;
   color: #657489;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.password-field:hover {
+  border-color: #CBD5E1;
+  background-color: #F1F5F9;
+}
+
+.password-field:focus {
+  border-color: #080808;
+  background-color: #fff;
+  outline: none;
+}
+
+.password-container:hover {
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.password-container:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease-in-out;
 }
 
 #copy-button {
@@ -147,12 +173,9 @@ main {
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
-  display: flex;
   align-items: center;
   justify-content: center;
   height: auto;
-  visibility: hidden;
 }
 
 .copy-icon {
@@ -181,11 +204,6 @@ input {
 
 input:focus {
   outline: none;
-}
-
-.password-container {
-  margin-top: 12px;
-  visibility: hidden;
 }
 
 .title {
@@ -258,11 +276,11 @@ input:focus {
 }
 
 .dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  visibility: hidden;
-  transition: all 0.4s ease;
+  margin-top: 16px;
 }
 
 .dropdown-row {
@@ -272,6 +290,13 @@ input:focus {
   width: 100%;
   gap: 24px;
   color: #657489;
+  -webkit-transition: .2s;
+  transition: .2s;
+  min-height: 26px;
+}
+
+.dropdown-row:hover {
+  opacity: 0.9;
 }
 
 .menu-dropdown {
@@ -280,19 +305,12 @@ input:focus {
   border: 1px solid #E2E8F0;
   padding: 12px;
   border-radius: 12px;
-  visibility: hidden;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.2s ease;
+  display: none;
   margin: 0;
 }
 
 .menu-dropdown.visible {
-  visibility: visible;
-  max-height: 100%;
-  opacity: 1;
-  overflow: visible;
+  display: block;
   margin-top: 8px;
 }
 
@@ -305,28 +323,44 @@ ul li {
   min-height: 24px;
   padding: 12px;
   background: white;
-  border-radius: 100px;
-  border: 2px solid #F1F5F9;
+  border-radius: 12px;
+  border: 1px solid #F1F5F9;
   margin-bottom: 8px;
   color: #657489;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+ul li:hover {
+  border-color: #CBD5E1;
+  background-color: #F8FAFC;
+}
+
+ul li:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease-in-out;
 }
 
 .password-slider {
   width: 100%;
-  height: 18px;
+  height: 26px;
   background: #F1F5F9;
   cursor: pointer;
   -webkit-appearance: none;
-  -webkit-transition: 0.2s ease-in-out;
   appearance: none;
   outline: none;
-  border-radius: 9px;
-  transition: opacity 0.2s ease-in-out;
+  border-radius: 13px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  padding: 0 4px;
+  position: relative;
+  margin: 2px 0;
 }
 
 .password-slider::-webkit-slider-runnable-track {
-  border-radius: 9px;
-  height: 18px;
+  border-radius: 13px;
+  height: 26px;
+  background: transparent;
 }
 
 .password-slider:hover {
@@ -336,22 +370,24 @@ ul li {
 .password-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  background: white;
-  border: 2px solid #080808;
+  background: #099bda;
   border-radius: 100px;
-  width: 18px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
   position: relative;
   z-index: 2;
+  -webkit-transition: .2s;
+  transition: .2s;
+  margin-top: -2px;
+  cursor: pointer;
 }
 
 .password-slider::-webkit-slider-thumb:hover {
-  border: 2px solid #080808;
+  transform: scale(0.95);
 }
 
 .password-slider::-webkit-slider-thumb:active {
-  background-color: #F1F5F9;
-  transition: all 0.1s ease-in-out;
+  transform: scale(0.9);
 }
 
 .switch {
@@ -378,7 +414,6 @@ ul li {
   -webkit-transition: .2s;
   transition: .2s;
   border-radius: 100px;
-
 }
 
 .slider:before {
@@ -388,13 +423,18 @@ ul li {
   width: 18px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: #099bda;
   -webkit-transition: .2s;
   transition: .2s;
+  border-radius: 50%;
 }
 
 input:checked + .slider {
   background-color: #080808;
+}
+
+input:checked + .slider:before {
+  background-color: white;
 }
 
 input:focus + .slider {
@@ -415,8 +455,6 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-
 
 .pword-length-num-inner-container {
   display: inline-flex;
