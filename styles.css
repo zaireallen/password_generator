@@ -1,0 +1,21 @@
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 200px;
+    padding: 10px;
+}
+
+.menu-dropdown.visible {
+    display: block;
+}
+
+.inner-container {
+    position: relative;
+    transition: height 0.3s ease;
+} 

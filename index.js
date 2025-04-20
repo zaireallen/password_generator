@@ -6,6 +6,10 @@ let pword_output = document.getElementById("generatedPWord")
 
 let copy_btn = document.getElementById("copy-button")
 
+// Get the customize section element that should trigger the dropdown
+let customizeSection = document.querySelector('.customize-section');
+let menuDropdown = document.getElementById('menu-dropdown');
+
 // password generator
 function genPword () {
     let pword = []
@@ -70,3 +74,36 @@ updateSliderBackground(slider);
 
 // handle window resize to recalculate dimensions
 window.addEventListener('resize', () => updateSliderBackground(slider));
+
+
+// // display dropdown menu
+// dropdown.onclick = function () {
+//     document.getElementById("menu-dropdown").style.visibility = "visible"
+// }
+
+// Add click handler to the customize section
+customizeSection.onclick = function() {
+    // Toggle the 'visible' class instead of directly manipulating style
+    menuDropdown.classList.toggle('visible');
+    
+    // Update the container height to accommodate the dropdown
+    const container = document.querySelector('.inner-container');
+    if (menuDropdown.classList.contains('visible')) {
+        container.style.height = container.scrollHeight + 'px';
+    } else {
+        container.style.height = 'auto';
+    }
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    if (!customizeSection.contains(event.target) && !menuDropdown.contains(event.target)) {
+        menuDropdown.classList.remove('visible');
+        document.querySelector('.inner-container').style.height = 'auto';
+    }
+});
+
+// Prevent dropdown from closing when clicking inside it
+menuDropdown.addEventListener('click', function(event) {
+    event.stopPropagation();
+});
