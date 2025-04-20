@@ -4,35 +4,41 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 let gen_pword_button = document.getElementById("generate-button")
 let pword_output = document.getElementById("generatedPWord")
 
-let copy_btn = document.getElementById("copy-button")
-
-// Get the customize section element that should trigger the dropdown
-let customizeSection = document.querySelector('.customize-section');
-let menuDropdown = document.getElementById('menu-dropdown');
+// get the slider element
+const slider = document.querySelector('.password-slider');
+let sliderVal = document.querySelector('.password-slider').value
 
 // password generator
 function genPword () {
     let pword = []
     
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < sliderVal; i++) {
         let r = Math.floor(Math.random() * characters.length)
         pword.push(characters[r])
         pword_output.value = pword.join("")
     }
 
     // displays the copy button once a valid password has been created
-    if (pword.length > 5) {
+    if (pword.length >= 8) {
         copy_btn = document.getElementById("copy-button").style.visibility = "visible";
     }
 }
 
 // copy button
+
+let copy_btn = document.getElementById("copy-button")
+
 copy_btn.onclick = function () {
     let val = document.getElementById('generatedPWord').value;
     navigator.clipboard.writeText(val).then(function (){
         alert("Text copied")
     })
 }
+
+
+// dropdown
+let customizeSection = document.querySelector('.customize-section');
+let menuDropdown = document.getElementById('menu-dropdown');
 
 // function to update slider background
 function updateSliderBackground(slider) {
@@ -60,13 +66,13 @@ function updateSliderBackground(slider) {
     slider.style.background = `linear-gradient(to right, #080808 ${gradientPercentage}%, #F1F5F9 ${gradientPercentage}%)`;
 }
 
-// get the slider element
-const slider = document.querySelector('.password-slider');
 
-// update the background when the slider value changes
+// update the background & password length when the slider value changes
 slider.addEventListener('input', function() {
     updateSliderBackground(this);
     document.getElementById('pword-length-num').textContent = this.value;
+    sliderVal = this.value // this and the line above are what adjusts the password length dynamically as we adjust the slider. prob could make it more efficient, but yea
+    console.log(sliderVal)
 });
 
 // initialize the slider background
@@ -74,12 +80,6 @@ updateSliderBackground(slider);
 
 // handle window resize to recalculate dimensions
 window.addEventListener('resize', () => updateSliderBackground(slider));
-
-
-// // display dropdown menu
-// dropdown.onclick = function () {
-//     document.getElementById("menu-dropdown").style.visibility = "visible"
-// }
 
 // Add click handler to the customize section
 customizeSection.onclick = function() {

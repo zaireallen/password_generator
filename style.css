@@ -70,7 +70,7 @@ main {
   padding: 24px 12px;
   display: flex;
   flex-direction: column;
-  transition: height 0.3s ease;
+  transition: height 0.2s ease;
 }
 
 .header { 
@@ -281,7 +281,7 @@ input:focus {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   margin: 0;
 }
 
