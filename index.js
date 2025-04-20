@@ -8,6 +8,9 @@ let pword_output = document.getElementById("generatedPWord")
 const slider = document.querySelector('.password-slider');
 let sliderVal = document.querySelector('.password-slider').value
 
+//dropdown section
+const dropdownSec = document.querySelector('.dropdown')
+
 // password generator
 function genPword () {
     let pword = []
@@ -21,6 +24,8 @@ function genPword () {
     // displays the copy button once a valid password has been created
     if (pword.length >= 8) {
         copy_btn = document.getElementById("copy-button").style.visibility = "visible";
+
+        dropdownSec.style.visibility = "visible"
     }
 }
 
