@@ -3,6 +3,7 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 
 let gen_pword_button = document.getElementById("generate-button")
 let pword_output = document.getElementById("generatedPWord")
+const pwordSec = document.querySelector('.password-container')
 
 // get the slider element
 const slider = document.querySelector('.password-slider');
@@ -21,8 +22,10 @@ function genPword () {
         pword_output.value = pword.join("")
     }
 
-    // displays the copy button once a valid password has been created
+    // displays divs once a valid password has been created
     if (pword.length >= 8) {
+        pwordSec.style.visibility = "visible"
+
         copy_btn = document.getElementById("copy-button").style.visibility = "visible";
 
         dropdownSec.style.visibility = "visible"
@@ -95,7 +98,7 @@ customizeSection.onclick = function() {
     // Update the container height to accommodate the dropdown
     const container = document.querySelector('.inner-container');
     if (menuDropdown.classList.contains('visible')) {
-        container.style.height = container.scrollHeight + 'px';
+        // container.style.height = container.scrollHeight + 'px';
     } else {
         container.style.height = 'auto';
     }

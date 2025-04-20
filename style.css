@@ -185,6 +185,7 @@ input:focus {
 
 .password-container {
   margin-top: 12px;
+  visibility: hidden;
 }
 
 .title {
