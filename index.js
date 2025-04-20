@@ -72,7 +72,8 @@ slider.addEventListener('input', function() {
     updateSliderBackground(this);
     document.getElementById('pword-length-num').textContent = this.value;
     sliderVal = this.value // this and the line above are what adjusts the password length dynamically as we adjust the slider. prob could make it more efficient, but yea
-    console.log(sliderVal)
+    genPword()
+
 });
 
 // initialize the slider background
